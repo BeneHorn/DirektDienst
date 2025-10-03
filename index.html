@@ -205,42 +205,9 @@
         </div>
       </section>
 
-      <!-- Einbettung in deine Website -->
-<link rel="stylesheet" href="https://yourcdn.example.com/chat-widget.css">
-<script src="https://yourcdn.example.com/widget.js" defer></script>
+     
 
-<!-- Optional: div als mountpoint -->
-<div id="my-ai-chat"></div>
-
-      // widget.js (einfacher, kein Framework)
-(function () {
-  const BACKEND = window.AI_CHAT_BACKEND || "https://your-backend.example.com";
-  const MOUNT = document.getElementById("my-ai-chat") || (function(){
-    const d = document.createElement("div"); d.id = "ai-chat-widget"; document.body.appendChild(d); return d;
-  })();
-
-  // Minimal CSS
-  const style = document.createElement("style");
-  style.textContent = `
-  #ai-widget { position: fixed; right: 20px; bottom: 20px; width: 320px; font-family: Arial, sans-serif; z-index: 99999; }
-  #ai-widget .header { background:#2b2b2b; color:#fff; padding:8px; border-radius:8px 8px 0 0; }
-  #ai-widget .msgs { background:#fff; max-height:300px; overflow:auto; padding:8px; border:1px solid #ddd; }
-  #ai-widget .input { display:flex; gap:4px; }
-  #ai-widget textarea { flex:1; }
-  `;
-  document.head.appendChild(style);
-
-  // Build UI
-  MOUNT.innerHTML = `
-  <div id="ai-widget">
-    <div class="header">AI Chat</div>
-    <div class="msgs" id="ai-msgs"></div>
-    <div class="input">
-      <textarea id="ai-input" rows="2" placeholder="Schreibe eine Nachricht..."></textarea>
-      <button id="ai-send">Senden</button>
-    </div>
-  </div>
-
+    
       <!-- Chatbot Widget Styles -->
 <style>
   #ai-chat-widget {
